@@ -1,19 +1,17 @@
 import socket
 
-target_host = "www.google.com"
-target_port = 80
+# Create TCP socket
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-#create a socket object
-client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+client.connect(("127.0.0.1", 9999))
 
-#connect the client
-client.connect((target_host,target_port))
+# Send data
+client.send(b"Hello Server, this is Balkar!")
 
-#send some data
-client.send(b"GET /HTTP/1.1 \r\n Host: google.com \r\n\r\n")
-
-#receive some data
+# Receive server reply
 response = client.recv(4096)
 
-print(response.decode())
+print("Server:", response.decode())
+
 client.close()
+
