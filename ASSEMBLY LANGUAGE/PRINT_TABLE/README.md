@@ -3,7 +3,7 @@
 #### 2. NASM assembler : https://github.com/ksw2000/x64-NASM-Practice ####
 #### 3. Text Editor any (sublime or vs code) ####
 
-## HOW TO RUN ##
+## How to Run ##
 #### nasm -f elf64 loop.asm -o loop.o ####
 #### ld loop.o -o loop ####
 #### ./loop ####
